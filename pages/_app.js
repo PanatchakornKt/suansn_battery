@@ -1,20 +1,20 @@
 import "../styles/index.css";
 import App from "next/app";
-import MainLayout from "../components/layouts/Main";
-import DefaultLayout from "../components/layouts/Default";
+import NavBar from "../components/layouts/navbar";
+import Footer from "../components/layouts/footer";
 
 class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
-    const Layout = Component.Layout || DefaultLayout;
-
     return (
       <>
-          <MainLayout>
-            <Layout>
+        <div className="min-h-screen w-full bg-white font-prompt">
+          <NavBar />
+          <div className='my-6'>
               <Component {...pageProps} />
-            </Layout>
-          </MainLayout>
+          </div>
+          <Footer />
+        </div>
       </>
     );
   }
